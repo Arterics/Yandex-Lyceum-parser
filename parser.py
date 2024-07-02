@@ -7,27 +7,14 @@ from config.py import *
 import time
 import os
 
-username = None
-password = None
 
 chrome_options = Options()
 chrome_options.add_argument("--headless")
 driver = webdriver.Chrome(executable_path="./chromedriver", options=chrome_options)  # вместо Chrome, вставляем название вашего браузера
-URL = 'URL'  # вставляем адресс главной страницы курса
-col_of_lessons = 1  # вставляем колличество уроков в курсе
-
-
-def log_pas_init():
-    global username, password
-    load_dotenv('password.env')
-    username = os.getenv('name')
-    password = os.getenv('password')
 
 
 def logining(url_main):
     global driver
-
-    log_pas_init()
 
     driver.get(url_main)
     driver.implocotly_wait(10)
