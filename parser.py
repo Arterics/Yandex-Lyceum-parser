@@ -1,15 +1,18 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
-from dotenv import load_dotenv
+from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup as bs
+from config.py import *
 import time
 import os
 
 username = None
 password = None
 
-driver = webdriver.Chrome()  # вместо Chrome, вставляем название вашего браузера
+chrome_options = Options()
+chrome_options.add_argument("--headless")
+driver = webdriver.Chrome(executable_path="./chromedriver", options=chrome_options)  # вместо Chrome, вставляем название вашего браузера
 URL = 'URL'  # вставляем адресс главной страницы курса
 col_of_lessons = 1  # вставляем колличество уроков в курсе
 
