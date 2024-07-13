@@ -34,15 +34,9 @@ def logining(url_main):
 
 def download(baze):
     legend, name = baze
-    name = name.replace('/', '')
-    name = name.replace('\\', '')
-    name = name.replace('|', '')
-    name = name.replace('<', '')
-    name = name.replace('>', '')
-    name = name.replace('"', '')
-    name = name.replace('?', '')
-    name = name.replace('*', '')
-    name = name.replace(':', '')
+    symbols = ['/', '\\', '|', '<', '>', '"', '?', '*', ':']
+    for symbol in symbols:
+        name = name.replace(symbol, '')
     with open(str(name) + '.html', 'w+', encoding="utf-8") as file:
         file.write(str(legend))
         print(str(legend))
