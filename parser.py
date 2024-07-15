@@ -4,8 +4,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 from bs4 import BeautifulSoup as bs
 from config.py import *
-import time
-import os
 
 
 chrome_options = Options()
