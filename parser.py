@@ -23,13 +23,11 @@ def logining(url_main):
     login.clear()
     login.send_keys(str(username))
     login.send_keys(Keys.RETURN)
-    driver.implocotly_wait(10)
 
     passwd = driver.find_element(By.NAME, "passwd")
     passwd.clear()
     passwd.send_keys(str(password))
     passwd.send_keys(Keys.RETURN)
-    driver.implocotly_wait(10)
 
 
 def download(baze):
@@ -58,7 +56,6 @@ def pars_one_work(number_of_work):
     uroks = driver.find_elements(By.CLASS_NAME, 'Accordion-Item')
     urok = uroks[number_of_work]
     urok.click()
-    driver.implocotly_wait(10)
 
     if structure()[0]:
         download(structure())
@@ -71,14 +68,11 @@ def pars_one_work(number_of_work):
     escape = driver.find_element(By.CLASS_NAME, 'nav-tab__inner')
     escape.click()
 
-    driver.implocotly_wait(10)
-
 
 def pars_one_lesson(number_of_lesson):
     works = driver.find_elements(By.CLASS_NAME, "link-list__link")
     work = works[number_of_lesson]
     work.click()
-    driver.implocotly_wait(10)
 
     uroks = driver.find_elements(By.CLASS_NAME, 'Accordion-Item')
     for num_of_work in range(len(uroks)):
@@ -86,8 +80,6 @@ def pars_one_lesson(number_of_lesson):
 
     escape = driver.find_element(By.CLASS_NAME, 'nav-tab__inner')
     escape.click()
-
-    driver.implocotly_wait(10)
 
 
 if __name__ == '__main__':
