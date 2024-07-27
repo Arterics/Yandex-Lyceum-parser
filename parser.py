@@ -60,7 +60,6 @@ def pars_one_work(number_of_work):
     else:
         button_uslovie = driver.find_elements(By.CLASS_NAME, 'nav-tab__inner')
         button_uslovie[1].click()
-        driver.implocotly_wait(10)
         download(structure())
 
     escape = driver.find_element(By.CLASS_NAME, 'nav-tab__inner')
