@@ -15,7 +15,7 @@ def logining(url_main):
     global driver
 
     driver.get(url_main)
-    driver.implocotly_wait(10)
+    driver.implicitly_wait(10)
     
     login = driver.find_element(By.NAME, "login")
     login.clear()
